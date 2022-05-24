@@ -1,0 +1,9 @@
+FROM golang:1.18.1-alpine3.15
+RUN mkdir /app
+
+WORKDIR /app
+
+# Adding necessary files
+ADD . .
+
+CMD CGO_ENABLED=0 go test -v ./...
